@@ -1,4 +1,4 @@
-\NewDocumentCommand{\SingleSlide}{ m m m o }{
+\NewDocumentCommand{\SingleSlide}{ m m m }{
 % 1=Title 
 % 2=Image Path
 % 3=Image Width
@@ -7,12 +7,30 @@
     \begin{columns}[c]
       \begin{column}{#3\textwidth}
         \centering
-		\includegraphics[width=\linewidth]{#2}
+        \includegraphics[width=\linewidth]{#2}
       \end{column}
+     
     \end{columns}
-   \IfValueT{#4}{%
-  	\cite{#4}
-	}
   \end{frame}
+}
+  
+
+
+\NewDocumentCommand{\SingleSlideCitation}{ m m m m}{
+% 1=Title 
+% 2=Image Path
+% 3=Image Width
+% 4=Citation
+  \begin{frame}{#1}
+    \begin{columns}[c]
+      \begin{column}{#3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{#2}
+      \end{column}
+     
+    \end{columns}
+    \vspace{1em}
+     {\tiny\hfill{~\cite{\ValueT{#4}}}}
+   \end{frame}
 }
   
