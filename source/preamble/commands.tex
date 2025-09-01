@@ -1,0 +1,18 @@
+\NewDocumentCommand{\SingleSlide}{ m m m o }{
+% 1=Title 
+% 2=Image Path
+% 3=Image Width
+% 4=Optional Citation
+  \begin{frame}{#1}
+    \begin{columns}[c]
+      \begin{column}{#3\textwidth}
+        \centering
+		\includegraphics[width=\linewidth]{#2}
+      \end{column}
+    \end{columns}
+   \IfValueT{#4}{%
+  	\cite{#4}
+	}
+  \end{frame}
+}
+  

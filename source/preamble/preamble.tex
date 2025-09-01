@@ -1,0 +1,24 @@
+% source/preamble/preamble.tex
+% This is the central configuration file for the entire project.
+% It manages the loading order of all preamble components.
+
+% 1. Load fundamental formatting first (theme, colors)
+\subimport{}{theme.tex}
+
+% 2. Load all necessary packages
+\subimport{}{packages.tex}
+
+% 3. Load custom commands and operators
+\subimport{}{commands.tex}
+
+% 4. Load custom Beamer elements (blocks, templates)
+% Often depends on packages and commands
+\subimport{}{elements.tex}
+
+% 5. Load metadata and settings (title, author, institute)
+% Must be loaded after themes and elements to be applied correctly
+\subimport{}{settings.tex}
+
+\subimport{}{formatting.tex}
+
+%\subimport{}{references.tex}
